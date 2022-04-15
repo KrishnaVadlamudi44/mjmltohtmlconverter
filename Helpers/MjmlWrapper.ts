@@ -60,7 +60,7 @@ export interface Options {
   removeEmptyAttributes: boolean;
 }
 
-export class MjmlEmailMapper<T> {
+export class MjmlMapper<T> {
   private readonly template: HandlebarsTemplateDelegate<T>;
   options: Options;
 
