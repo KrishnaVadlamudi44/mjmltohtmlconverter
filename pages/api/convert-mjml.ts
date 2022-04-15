@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import { compile } from "handlebars";
 import type { NextApiRequest, NextApiResponse } from "next";
-import { MjmlMapper } from "../../Helpers/mjmlWrapper";
+import { MjmlMapper } from "../../Helpers/MjmlWrapper";
 
 type Data = {
   html: string;
