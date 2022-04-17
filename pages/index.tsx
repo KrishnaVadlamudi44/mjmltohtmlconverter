@@ -1,6 +1,8 @@
 import type { NextPage } from "next";
+import dynamic from "next/dynamic";
 import Head from "next/head";
 import { useEffect, useState } from "react";
+const CodeEditor = dynamic(import("../Components/CodeEditor"), { ssr: false });
 
 const Home: NextPage = () => {
   const [html, setHtml] = useState("");
@@ -43,18 +45,20 @@ const Home: NextPage = () => {
 
       <main className="grid grid-cols-2 gap-2 h-screen">
         <div className="grid grid-rows-2 border-2">
-          <textarea
-            className="border p-2 overflow-scroll"
-            value={mjml}
-            onChange={(e) => setmjml(e.target.value)}
+          <CodeEditor
+            name="mjmlEditor"
+            code={mjml}
+            onChange={(value) => setmjml(value)}
+            language="html"
           />
-          <textarea
-            className="border p-2 overflow-scroll"
-            value={context}
-            onChange={(e) => setContext(e.target.value)}
+          <CodeEditor
+            name="contextJson"
+            code={context}
+            language="json"
+            onChange={(value) => setContext(value)}
           />
         </div>
-        <div className="border-2">
+        <div className="border-2" style={{ width: "auto" }}>
           <div dangerouslySetInnerHTML={{ __html: html }}></div>
         </div>
       </main>
