@@ -18,7 +18,10 @@ const Home: NextPage = () => {
   </mj-body>
   </mjml>`);
 
-  const [context, setContext] = useState(`{"test":"World"}`);
+  const [context, setContext] = useState(`
+  {
+    "test":"World"
+  }`);
 
   const getData = async () => {
     const rawResponse = await fetch("api/convert-mjml", {
