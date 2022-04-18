@@ -44,7 +44,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className="grid grid-cols-2 gap-2 h-screen">
-        <div className="grid grid-rows-2 border-2">
+        <div className="grid grid-rows-2 gap-2 border-2">
           <CodeEditor
             name="mjmlEditor"
             code={mjml}
