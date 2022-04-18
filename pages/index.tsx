@@ -18,8 +18,7 @@ const Home: NextPage = () => {
   </mj-body>
   </mjml>`);
 
-  const [context, setContext] = useState(`
-  {
+  const [context, setContext] = useState(`{
     "test":"World"
   }`);
 
