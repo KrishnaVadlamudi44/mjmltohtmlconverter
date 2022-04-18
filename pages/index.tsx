@@ -11,14 +11,14 @@ const Home: NextPage = () => {
     <mj-section>
       <mj-column>
         <mj-text>
-          Hello World!
+          Hello {{test}}!
         </mj-text>
       </mj-column>
     </mj-section>
   </mj-body>
   </mjml>`);
 
-  const [context, setContext] = useState("{}");
+  const [context, setContext] = useState(`{"test":"World"}`);
 
   const getData = async () => {
     const rawResponse = await fetch("api/convert-mjml", {
