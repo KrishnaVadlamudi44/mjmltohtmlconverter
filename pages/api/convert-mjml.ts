@@ -12,8 +12,9 @@ export default function handler(
   res: NextApiResponse<Data>
 ) {
   const requestBody: { mjml: string; context: string } = req.body;
-  const htmlRes = new MjmlMapper(compile(requestBody.mjml)).toHtml(
-    JSON.parse(requestBody.context)
-  );
+  const htmlRes = new MjmlMapper(compile(requestBody.mjml))
+    .toHtml(JSON.parse(requestBody.context))
+    .replace(/&#x3D;/g, "=")
+    .replace(/&amp;/g, "&");
   res.status(200).json({ html: htmlRes });
 }
