@@ -19,7 +19,7 @@ const Home: NextPage = () => {
   </mjml>`);
 
   const [context, setContext] = useState(`{
-    "test":"World"
+    "test":"Jarvis"
   }`);
 
   const getData = async () => {
